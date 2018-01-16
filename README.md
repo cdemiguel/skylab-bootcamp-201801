@@ -4,7 +4,9 @@
 
 ![Skylab](http://www.skylabcoders.com/images/403/default.png)
 
-:paperclip: Se introduce el repositorio de dicho bootcamp entendidos en dos fases:
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) [![GitHub commits](https://img.shields.io/github/commits-since/Naereen/StrapDown.js/v1.0.0.svg)](https://GitHub.com/Naereen/StrapDown.js/commit/) [![Generic badge](https://img.shields.io/badge/maintenance%3F-yes-green.svg)](https://shields.io/)
+
+:paperclip: **Se introduce el repositorio de dicho bootcamp entendidos en dos fases:**
 - Curso
 - Precurso
 
