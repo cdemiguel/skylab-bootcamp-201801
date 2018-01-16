@@ -4,7 +4,7 @@
 
 ![Skylab](http://www.skylabcoders.com/images/403/default.png)
 
-Se introduce el repositorio de dicho bootcamp entendidos en dos fases:
+:paperclip: Se introduce el repositorio de dicho bootcamp entendidos en dos fases:
 - Curso
 - Precurso
 
