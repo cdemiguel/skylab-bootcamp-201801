@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculadora</title>
+	<link rel="stylesheet" href="calculadora.css">
+</head>
+
+<body>
+<div class="calculator">
+  <div class="input" id="input"></div>
+  <div class="buttons">
+    <div class="operators">
+      <div class="+" onclick="showInputNumber(this);">+</div>
+      <div id="-" class="-" onclick="showInputNumber(this);">-</div>
+      <div id="&times;" class="&times;" onclick="showInputNumber(this);">&times;</div>
+      <div id="&divide;" class="&divide;" onclick="showInputNumber(this);">&divide;</div>
+      <!--
+      <div id="&radic;" style="width: 430px;" class="operator">&radic;</div>
+      -->
+    </div>
+    <div class="leftPanel">
+      <div class="numbers">
+        <div onclick="showInputNumber(this);" class="7">7</div>
+        <div onclick="showInputNumber(this);" class="8">8</div>
+        <div onclick="showInputNumber(this);" class="9">9</div>
+      </div>
+      <div class="numbers">
+        <div onclick="showInputNumber(this);" class="4">4</div>
+        <div onclick="showInputNumber(this);" class="5">5</div>
+        <div onclick="showInputNumber(this);" class="6">6</div>
+      </div>
+      <div class="numbers">
+        <div onclick="showInputNumber(this);" class="1">1</div>
+        <div onclick="showInputNumber(this);" class="2">2</div>
+        <div onclick="showInputNumber(this);" class="3">3</div>
+      </div>
+      <div class="numbers">
+        <div onclick="showInputNumber(this);" class="0">0</div>
+        <div onclick="showInputNumber(this);" class=".">.</div>
+        <div id="clear" onclick="newCalc()">C</div>
+      </div>
+    </div>
+    <div class="equal" id="result" onclick="getResult();">=</div>
+  </div>
+</div>
+<script type="text/javascript" src="calculadora.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pasapalabra</title>
+	<link rel="stylesheet" href="css/uikit.min.css">
+	<link rel="stylesheet" href="css/project4.css">
+</head>
+
+<body class="uk-section-primary">
+	
+	
+	<button id="newgame-button" title="Refresca toda la página" class="uk-button uk-width-1-1 uk-button-danger" onclick="newGame();">New Game</button>
+	
+
+	<div class="time-container">
+		<div id="time">120</div>
+	</div>	
+
+	<div class="uk-section-primary uk-container uk-padding-large uk-padding-remove-horizontal uk-container-center">
+		<h1 class="word-heading uk-heading-primary">PasaPalabra</h1>
+		<!-- introduce nombre modulo -->
+		<div class="uk-container uk-text-center uk-container-expand">
+			<div class="uk-section uk-section-xsmall">
+		    	<div class="">
+	    			<span class="uk-margin-small-bottom message-container">Indica tu nombre para empezar a jugar:</span>
+	    			<input id="user" class="uk-input uk-form-width-medium uk-margin-small-bottom" type="text" placeholder="Introduce tu nombre">
+	    			<button id="word-name-button" class="uk-button uk-button-primary uk-margin-small-bottom" onclick="insertUser();">Seleccionar nombre</button>
+		    	</div>
+			</div>
+		</div>
+		<!-- contenedor letras -->
+		<div id="alphabet-container" class="uk-container uk-container-expand word-alphabet-container">
+		</div>
+		<!-- contendedor de preguntas -->
+		<div id="question-container" class="uk-container uk-text-center uk-margin-medium uk-container-expand">
+		</div>
+		<!-- contenedor de respuestas -->
+		<div id="answer-container" class="uk-container uk-text-center uk-container-expand" style="display: none;">
+			<input id="answer" class="uk-input uk-form-width-medium uk-margin-small-bottom" type="text" placeholder="Introduce tu respuesta">
+			<button id="buttonanswer" class="uk-button uk-button-primary uk-margin-small-bottom" onclick="insertAnswer();">Siguiente Pregunta</button>
+		</div>
+		<!-- contendedor de aviso -->
+		<div id="alert-name-container" class="uk-text-center uk-margin-medium" style="display: none;">
+			<span class="uk-text-success">
+				Añade un nuevo nombre para seguir jugando
+			</span>
+		</div>
+		<div id="ranking-section" class="uk-container uk-container-expand">
+			<h2 class="uk-heading-divider uk-text-large">Ranking</h2>
+			<div id="ranking-container"></div>
+		</div>
+
+		<div id="buttonnew-container"></div>
+	</div>
+<script type="text/javascript" src="js/project4.js"></script>
+</html>

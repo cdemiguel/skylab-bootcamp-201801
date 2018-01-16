@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+//## Final Challenges (JS)!
+//a) Escribe una funcion en la que, declarando una array con los numeros del 1 al 9, 
+//muestres por pantalla los numeros unidos por parejas (1-2, 2-3, 3-4...), además, cada elemento de la pareja deberá estar multiplicada por 2.
+function showNums(){
+    var nums = [1,2,3,4,5,6,7,8,9]
+    var doubles = nums.map(function(x) {
+   	return x * 2;
+	});
+
+    for(var i = 0; i < nums.length-1; i++){
+        var pairs = []
+        var num1 = doubles[i]
+        var num2 = doubles[i+1]
+        console.log("la pareja numero " + [i+1] + " es " + num1 + "--" + num2)
+    }
+}
+showNums();
+
+//a1) La funcion debería aceptar la array a tratar como argumento.
+//a2) Pasa también el numero a multiplicar a la función como argumento
+function showNums(){
+	var rel = []
+	for(prop in arguments){
+		var numbers=arguments[prop]
+		rel.push(numbers)
+	}
+	var multiplierNumber = rel.slice(-1)[0];
+	console.log(multiplierNumber)
+
+    var doubles = rel.map(function(x) {
+			return x * multiplierNumber;
+    })
+
+    for(var i = 0; i < arguments.length-1; i++){
+        var pairs = []
+        var num1 = doubles[i]
+        var num2 = doubles[i+1]
+        console.log("la pareja numero " + [i+1] + " es " + num1 + "--" + num2)
+    }
+}
+showNums(1,2,3,4,5,6,7,8,9,2);
+//a3) La función debería ser capaz de recibir el numero de parejas que queremos devolver del total.
+function showNums(){
+	var rel = []
+	for(prop in arguments){
+		var numbers=arguments[prop]
+		rel.push(numbers)
+	}
+	var multiplierNumber = rel.slice(-2)[0];
+	console.log("el multiplicador es " + multiplierNumber)
+
+    var doubles = rel.map(function(x) {
+			return x * multiplierNumber;
+    })
+
+	var showManyItems = rel.pop();
+
+    for(var i = 0; i <= showManyItems-1; i++){
+        var pairs = []
+        var num1 = doubles[i]
+        var num2 = doubles[i+1]
+        console.log("la pareja numero " + [i+1] + " es " + num1 + "--" + num2)
+    }
+}
+showNums(1,2,3,4,5,6,7,8,9,2,3);
+
+//b) Volvemos a la numeros... Podrias hacer una funcion que mostrara por pantalla la serie Fibonacci?
+//b2) Puedes añadir además, la posición de cada resultado?
+//b3) Ahora, inserta los resultados en una array y muestralos todos juntos de una manera amigable.
+//b4) Ahora, el usuario debería ser capaz de especificar la posición de la serie hasta donde queremos llegar.
+function fibonacci(n){
+    var countFirst=0;
+    var countSecond=1;
+    var arrayFibo = [];
+    for(i=0; i<n;i++){
+        var numberTemp=countFirst;
+        countFirst=countSecond;
+        countSecond=numberTemp+countSecond;
+        //b2) Puedes añadir además, la posición de cada resultado?
+		arrayFibo.push(countFirst + " position " + [i+1] + "º");
+    }
+    console.log(arrayFibo)
+ 
+}
+fibonacci(50);
+//b5) Ahora, muestra los resultados en forma piramidal: ////////////////////////////////
+
+function fibonacci(n){
+    var countFirst=0;
+    var countSecond=1;
+    var arrayFibo = [];
+    arrayFibo.push(countFirst);
+    for(i=0; i<n;i++){
+        var numberTemp=countFirst;
+        countFirst=countSecond;
+        countSecond=numberTemp+countSecond;
+        arrayFibo.push(countFirst)
+    } 
+    for(i=0; i<n;i++) {
+    	console.log(arrayFibo.slice(0, [i]).toString())
+    }
+	var z = n;
+    for(i=0; i<=n;i++) {
+    	console.log(arrayFibo.slice(0, z--).toString())
+    }
+}
+fibonacci(6);
+
+//c) Simple Scripting program. Crea un programa que transforme un número de 4 dígitos en otro diferente 
+//con las posiciones de los dígitos cambiadas, creandio un nuevo código
+
+//var code = 3712;
+function codeScript(code){
+	code= code.toString();
+	code= code.split("");
+	console.log(code)
+
+	for (var i = 0; i < code.length; ++i){
+		var firstCode = code[0]
+		var lastCode = code.slice(-1)[0] 
+		var numberNew = code.splice(4, 1, firstCode)
+		code.shift();
+		console.log(code.join(""))
+	}
+}
+codeScript(3712);
+
+
+//c2) Ahora, el usuario debería poder introducir como parámetro dos códigos a la vez 
+//y devolver los dos códigos encriptados (Los dos códigos se deberían encriptar en la misma función)
+function codeScript(code, code2){
+
+arraysCodes = []
+
+	for (var i = 0; i < arguments.length; ++i){
+		code= arguments[i].toString();
+		code= code.split("");
+		arraysCodes.push(code);
+	}
+
+	for (var i = 0; i < arraysCodes.length; ++i){
+		for (var j = 0; j < arraysCodes[1].length; ++j){
+			var firstCode = arraysCodes[i][0]
+			var numberNew = arraysCodes[i].splice(4, 1, firstCode)
+			arraysCodes[i].shift();
+			console.log(arraysCodes[i].join(""))
+		}
+
+	}
+
+
+}
+codeScript(3712, 1234);
+
+//c3) Ahora, vamos a añadir un nivel más de seguridad. Despues de cambiar la posición de los dígitos, multiplicaremos a cada miembro por un numero cuya multiplicación no sea superior a 10. (Si es superior a 10, conseguiremos una multplicación de dos digitos y el código ya no sería de 4 valores)
+
+function codeScript(code, code2){
+
+arraysCodes = []
+
+    for (var i = 0; i < arguments.length; ++i){
+        code= arguments[i].toString();
+        code= code.split("");
+        code= code.map(function(item) {
+            return parseInt(item, 10);
+        });
+        arraysCodes.push(code);
+    }
+    for (var i = 0; i < arraysCodes.length; ++i){
+            arraysCodes[i] = arraysCodes[i].map(function(x) { 
+                if(x<5){
+                    return x * 2; 
+                }else {
+                    return x
+                }
+            });
+            console.log("esto es la array lalala multipolicada por dos" + arraysCodes[i])
+        for (var j = 0; j < arraysCodes[1].length; ++j){
+
+            var firstCode = arraysCodes[i][0]
+            var numberNew = arraysCodes[i].splice(4, 1, firstCode)
+            arraysCodes[i].shift();
+            // me costo mucho transformar de un string a un numero
+            var numbersCode = Number(arraysCodes[i].join(''));
+            console.log(numbersCode)
+            return numbersCode
+        }
+    }
+}
+codeScript(3712, 1234);
+
+//c4) Ahora, implementa en otra funcion aparte el decrypter(), que recibirá como argumento un código encriptado 
+//(y correspondientemente multiplicado en el apartado c3) y nos devuelva el código desencriptado.
+
+////////
+/////////////
+/////////////////////
+//////////////////////////////////
+/*e) Crea un programa al que le introduces un número como parámetro del 0 al 100 y devuelve el número transformado a alfabeto normal, es decir:*/
+//e2) Ahora, el output debería ser capaz de, aparte de devolver el número traducido, devolver también los números por los que está formado:
+
+
+var units = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+var tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
+var teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+
+function sayNumber(number){
+
+    var arrayNumber = [];
+    number = number.toString();
+    var number = number.split("");
+    //split del numero para separarlo hacer un for y pushearlo en un array.
+    for (var i = 0; i < number.length; ++i){ 
+        arrayNumber.push(number[i]);
+    }
+    number = number.join("")
+    number = parseInt(number)
+    var tensNumber = arrayNumber[0];
+    tensNumber= parseInt(tensNumber);
+    var unitsNumber = arrayNumber[1];
+    unitsNumber= parseInt(unitsNumber);
+    if(number<=9) {
+        console.log(units[number])
+        console.log("esta formado por el siguiente numero => " + number)
+    }
+    if(10<=number && number<=19){
+        console.log(teens[number-10])
+        console.log("esta formado por el siguiente numero => " + number)
+        console.log("compuesto por " + 10 + " y compuesto por " + (number-10))
+
+    }
+    if(20<=number && number<=99){
+        console.log(tens[tensNumber] + " " + units[unitsNumber])
+        console.log("esta son las decenas " + 10*tensNumber + " y compuesto por " + unitsNumber)
+        console.log("esta formado los siguientes numeros=> " + tens[tensNumber] + " y " + units[unitsNumber])
+    }
+    if(100<=number && number<=999){
+        number = number.toString();
+        var number = number.split("");
+        number = number.join("")
+        arrayNumberCentena = [];
+        //split del numero para separarlo hacer un for y pushearlo en un array.
+        for (var i = 0; i < number.length; ++i){ 
+            arrayNumberCentena.push(number[i]);
+        }
+        var numberCentenas = arrayNumberCentena[0]
+        var numberDecenas = arrayNumberCentena[1]
+        var numberUnidades =  arrayNumberCentena[2]
+        numberCentenas = parseInt(numberCentenas)
+        numberDecenas = parseInt(numberDecenas)
+        numberUnidades = parseInt(numberUnidades)
+        var numberControl = arrayNumberCentena[1] + arrayNumberCentena[2]
+        var numberControl = parseInt(numberControl)
+        if(0<=numberControl && numberControl<10){
+            console.log(units[numberCentenas] + " hundred " + units[numberUnidades])
+        }
+        if(10<=numberControl && numberControl<=19){
+            console.log(units[numberCentenas] + " hundred " + teens[numberUnidades])
+        }
+        if(20<=numberControl && numberControl<=99){
+            console.log(units[numberCentenas] + " hundred " + tens[numberDecenas] + " " +  units[numberUnidades] )
+        }
+    }
+    if(number===1000){
+        console.log("one thousand")
+    }
+}
+sayNumber(999);
+
+
+////////
+/////////////
+/////////////////////
+//////////////////////////////////
+
+/*
+d) Crea un programa que use la encriptacion Romana, como es? Si tenemos la palabra SKYLAB, la palabra encriptada será SLKAYB. Si divides la palabra original en 2 grupos obtienes:
+SKY
+|-|-|
+LAB Entonces, uniendo las primeras letras de cada grupo, las segundas y las terceras obtienes SLKAYB.
+Entonces, el programa deberá recibir SKYLAB y retornar SLKAYB
+d2) Programa el desencriptador, pasa como parámetro SLKAYB y que devuelva SKYLAB.
+Hint: for decrypt, only catch the pair words like: S L K A Y B , then, you get SKY, the next step is catch the odd words, S L K A Y B, group the two groups and you get the original word.
+COGER LAS PALABRAS PARES
+COGER LAS PALABRAS IMPARES
+d3) Agrupa la función Encrypt y decrypt en una unica función, de forma que introduzcas como parámetro SKYLAB y devuelva SKYLAB (con todas las transformaciones internas hechas y mostrando, entre medias, la transformación)
+d4) Lo tienes? Prueba ahora con SKYLABCODERS. Cambia la función para que pueda aceptar palabras más largas. 
+*/
+function encryptDesecrypt(str){
+    function encryptSkylab() {
+        firstPart = [];
+        secondPart = [];
+        finalPart = [];
+        for(var i =0; i<str.length; i++){
+            var halfNumber = str.length/2
+            console.log(halfNumber)
+            if(i<halfNumber){
+                firstPart.push(str[i]);
+            }else {
+                secondPart.push(str[i]);
+            }
+        }
+        console.log(firstPart)
+        console.log(secondPart)
+
+        for(var i =0; i<firstPart.length; i++){ 
+            finalPart.push(firstPart[i]);
+            finalPart.push(secondPart[i]);
+        }
+        console.log(finalPart.join(""))
+        return finalPart.join("");
+    }
+
+    var wordEncrypt = encryptSkylab();
+
+    function dencryptSlkayb(strTwo) {
+        var dencryptWordOne=[];
+        var dencryptWordTwo=[];
+        for(var i =0; i<strTwo.length; i++){
+            if(i%2===0){
+                dencryptWordOne.push(strTwo[i])
+            }else{
+                dencryptWordTwo.push(strTwo[i])
+            }
+        }
+        var finalWordDencrypt = dencryptWordOne.join("") + dencryptWordTwo.join("");
+        console.log(finalWordDencrypt)
+    }
+    dencryptSlkayb(wordEncrypt);
+}
+encryptDesecrypt("SKYLABCODERS")
+
+//f) Recibiendo el siguiente texto por parámetro a tu función... :
+//Prepara dicha función para que modifique y devuelva el texto bajo estas reglas: Signos de puntuación: - "." => "," - "," => "" Palabras: - "dolor" => "potato" - "lorem" => "tomato" - "labor" => "cucumber" - "consequatur" => "garlic" - "ipsum" => "onion"
+//f1) Añade una funcionalidad que cuente cuantos cambios/coincidencias ha encontrado de cada palabra, y te los muestre de una forma amigable para el usuario
+    function showText(text) {
+        var mapObj = {
+            dolor:"potato",
+            lorem:"tomato",
+            labor:"cucumber",
+            consequatur:"garlic",
+            ipsum:"onion",
+            ".":",", // preguntad string : string en objetos para caracteres especiales //
+            ",":"''",
+            contador:1
+        };
+        text = text.toLowerCase();
+        text = text.replace(/ dolor |lorem|ipsum|labor|consequatur|,|\./gi, function(matched){
+            mapObj.contador = mapObj.contador+1;
+            return mapObj[matched];
+        });
+        console.log(text);
+        console.log("se han hecho los siguientes numeros de cambios: " + mapObj.contador)
+    }
+    showText("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.");
+
+
+// a file icon
+//ayu
+//advanced new file
+//emmet
+//fuzzy file path
+//HTML-CSS-JS prettiffy
+//unsplash imagenes random !!! :)
+
+</script>
+</head>
+<body>	
+</body>
+</html>
+

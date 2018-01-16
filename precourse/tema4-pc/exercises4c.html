@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+
+
+function codeScript(code, code2){
+arraysCodes = []
+    for (var i = 0; i < arguments.length; ++i){
+        code= arguments[i].toString();
+        code= code.split("");
+        code= code.map(function(item) {
+            return parseInt(item, 10);
+        });
+        arraysCodes.push(code);
+    }
+    for (var i = 0; i < arraysCodes.length; ++i){
+            arraysCodes[i] = arraysCodes[i].map(function(x) { 
+                    return x * 2; 
+            });
+            console.log("esto es la array multipolicada por dos" + arraysCodes[i])
+        for (var j = 0; j < arraysCodes[1].length; ++j){
+
+            var firstCode = arraysCodes[i][0]
+            var numberNew = arraysCodes[i].splice(4, 1, firstCode)
+            arraysCodes[i].shift();
+            // me costo mucho transformar de un string a un numero
+            var numbersCode = Number(arraysCodes[i].join(''));
+            console.log(numbersCode)
+            return numbersCode
+        }
+    }
+}
+
+var numberEncrypter =  codeScript(3412, 1234);    
+
+function codeScriptDecr(numberEncrypter) {
+    numberEncrypter = numberEncrypter.toString();
+    var numberEncrypter = numberEncrypter.split("");
+    numberEncrypter = numberEncrypter.join("")
+    arraysCodes2 = [];
+    //split del numero para separarlo hacer un for y pushearlo en un array.
+    for (var i = 0; i < numberEncrypter.length; ++i){ 
+        arraysCodes2.push(numberEncrypter[i]);
+    }
+    console.log(arraysCodes2)
+    function divideNum(arraysCodes2){
+        var numsDivid = arraysCodes2.map(function(num){
+            return num / 2;
+        }) 
+        console.log(numsDivid)
+        return numsDivid;
+    }
+    var numberhalf = divideNum(arraysCodes2)
+    console.log(numberhalf)
+}
+
+codeScriptDecr(numberEncrypter);
+
+
+</script>
+</head>
+<body>  
+</body>
+</html>
