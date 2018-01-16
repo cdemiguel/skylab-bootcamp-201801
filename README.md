@@ -1,16 +1,87 @@
-# Practice the Command Line Interface (CLI)
+# Skylab 2018
 
-## Goals
+## Fullstack Web development 2018 Bootcamp
 
-- Basic commands
+Se introduce el repositorio de dicho bootcamp entendidos en dos fases:
+- Curso
+- Precurso
 
-## Tasks
+##Precurso
+Encontraremos los ejercicios iniciales del Bootcamp. Compuestos en 4 temas sobre:
+- Var / Loops Condicionales - Tema 0
+- Metodos - Tema 1
+- Objetos - Tema 2
+- Funciones - Tema 3
+- Challenges / retos Tema 4
 
-In this practice we will create a basic web-app project with the CLI.
+y dos ejercicios completos (html|css|js):
+- Pasapalabra
+- Calculadora
 
-**IMPORTANT**! All this practice must be done with the CLI (except for unzipping files and editing their contents)
+##Curso
+Sobre el curso se irá añadiendo contenido especificado y contenido dado. Aunque no se encuentre en archivos.
 
-### **Step 0**: Create the skylab folder structure following in your system documents folder:
+
+**Estructura de carpetas:**
+```sh
+│   README.md
+│
+├───course
+│   └───commander_exercise
+│       └───frontend
+│           └───helloworld
+│               │   index.html
+│               │
+│               ├───scripts
+│               │       main.js
+│               │
+│               └───styles
+│                       styles.css
+│
+└───precourse
+    │   project4_pasapalabra_cdemiguel.zip
+    │   README.md
+    │
+    ├───project1_calculadora
+    │       calculadora.css
+    │       calculadora.html
+    │       calculadora.js
+    │
+    ├───project4_pasapalabra
+    │   │   project4.html
+    │   │
+    │   ├───css
+    │   │       project4.css
+    │   │       uikit.min.css
+    │   │
+    │   └───js
+    │           project4.js
+    │
+    ├───tema0-pc
+    │       exercises0.js
+    │
+    ├───tema1-pc
+    │       exercises1.js
+    │       project1.js
+    │
+    ├───tema2-pc
+    │       exercises2.js
+    │       project2.js
+    │
+    ├───tema3-pc
+    │       exercises3.js
+    │       project3.html
+    │       project3.js
+    │
+    └───tema4-pc
+        │   exercises4.html
+        │   exercises4c.html
+        │
+        └───Project4_noHtml
+                project4.html
+                project4.js
+```
+
 
 ```
 skylab
