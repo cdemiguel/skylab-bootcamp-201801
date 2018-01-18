@@ -1,14 +1,14 @@
 //isArray
 var arrayOrNot = [3,5]
 function isArray(){
-    if(typeof arrayOrNot == "object"){
+    if(Array.isArray(arrayOrNot) == true){
         return true
     }
     else{
         return false
     }
 }
-isArray(arrayOrNot)
+isArray()
 
 //joinElements
 beatles = ['John','George','Ringo','Paul'];
@@ -27,12 +27,30 @@ function arrayClone(a){
 console.log("este es el array clonado=>", arrayClone(arrayClone01))
 
 //findDifferences
-var arr01 = [1,2,3,4]
-var arr02 = [1,2,3,4,5]
+var arr1 = [1,2,3,4,5,6]
+var arr2 = [1,4,6]
+var arr3 = []
+var arrDef = []
+function showDifferentNumbers(){
+    arr3 = arr1.concat(arr2);
+    arr3 = arr3.sort()
+    console.log(arr3)
+    for(var i = 0; i < arr3.length; i++){
+        if(arr3[i] == arr3[i+1]){
+            arrDef.push(arr3[i]);
+        }
+    }
+    console.log(arrDef)
+}
+showDifferentNumbers()
+
+// UTILIZAR FOR E INDEX OF
+//ordenar igualar
+
+
 //TODO EJERCICIO ENCONTRAR LAS DIFERENCIAS
 
 //Sum and Product
-//TODO
 var arr = [1,2,3,4]
 function sumAndProduct(a){
     var initialNum = a[0]
@@ -41,7 +59,6 @@ function sumAndProduct(a){
         initialNum = totalSum
     }
     console.log(totalSum-a[0])
-
     var multNumbers = a.reduce(function(a, b) {
         return a * b;
     });
@@ -72,13 +89,14 @@ generateArrayLength(1,4)
 //last
 function last(a,b){
     if(b){
-	for(var i = 0; i < b; i++){
+	for(var i = b; i > 0; i--){
         console.log(a[i])
-    }}else{
-        console.log(a)   
+    }
+    }else{
+        console.log(a[a.length-1])   
     }
 }
-console.log(last([7, 9, 0, -2],3));
+console.log(last([7, 9, 0, -2],2));
 
 //sortItems
 var arr1 = [ 3, 8, 7, 6, 5, -4, 3, 2, 1 ]
@@ -98,22 +116,8 @@ function getRandom(){
 getRandom()
 
 //findDuplicates
-var arrDuplicates = [3,3,7,8,9,6,8]
-function findDuplicates(){
-    for(var i = 0; i < arrDuplicates.length; i++){
-        var number = arrDuplicates[i]
-        for(var j = 0; j < arrDuplicates.length; j++){
-            var number2 = arrDuplicates[j]
-            if(number === number2){
-                console.log(number + " value duplicate")
-            }else{
-                console.log(number + " value no duplicate")
-            }
 
-        }
-    }
-}
-findDuplicates()
+
 // TODO:
 
 //Merge arrays
@@ -127,3 +131,5 @@ var arrayNoDuplicate = array.reduce(function(a,b){
     return a;
   },[]);
 console.log(arrayNoDuplicate)
+
+//separateEven

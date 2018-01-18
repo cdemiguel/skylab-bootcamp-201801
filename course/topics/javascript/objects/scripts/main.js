@@ -18,4 +18,11 @@ function Car(brand, model, color) {
 }
 var theCar = new Car("Seat", "Leon", "Red");
 
+theCar.soloCar = function() {
+    return this.brandCar + " y el moldelo " + this.modelCar
+}
+
+theCar.soloCar()
+
+///
 console.log("my car is a " + theCar.brandCar + " " + theCar.modelCar + "and the color is " + theCar.colorCar )
