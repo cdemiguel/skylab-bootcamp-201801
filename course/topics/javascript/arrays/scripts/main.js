@@ -133,3 +133,12 @@ var arrayNoDuplicate = array.reduce(function(a,b){
 console.log(arrayNoDuplicate)
 
 //separateEven
+var arrayToSeparate = [2,563,7,9]
+function separateEven(a) {
+    //bajarmelo a string y cambiar comas con una regular expresion por -
+    arrayToSeparate=arrayToSeparate.join();
+    console.log(arrayToSeparate)
+    var newOutPut= arrayToSeparate.replace(",","-")
+    console.log(newOutPut)
+}
+separateEven(arrayToSeparate)

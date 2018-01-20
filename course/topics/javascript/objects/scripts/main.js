@@ -22,7 +22,7 @@ theCar.soloCar = function() {
     return this.brandCar + " y el moldelo " + this.modelCar
 }
 
-theCar.soloCar()
+theCar.soloCafr()
 
 ///
 console.log("my car is a " + theCar.brandCar + " " + theCar.modelCar + "and the color is " + theCar.colorCar )
