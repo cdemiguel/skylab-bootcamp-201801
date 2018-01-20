@@ -4,7 +4,7 @@
 Se han hecho en carpetas del proyecto diferentes ejercicios según temario del precurso.
 Ademas de dos proyectos generales que constan de una calculadora y un pasapalabra
 
-Esta es la distribucion del proyecto:
+Distribucion del proyecto:
 ```sh
 │   project4_pasapalabra_cdemiguel.zip
 │   README.md
