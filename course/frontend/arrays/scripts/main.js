@@ -142,3 +142,44 @@ function separateEven(a) {
     console.log(newOutPut)
 }
 separateEven(arrayToSeparate)
+
+// moveElement :)!!!
+function movePosition(array,item,position){
+    var numberSelected = array[item]
+    var arr = []
+    for(var i = 0; i < array.length; i++){
+        if(array[i]!==numberSelected){
+            arr.push(array[i])
+        }
+    }
+    var removed = arr.splice(position, 0, numberSelected);
+    console.log(arr)
+//return
+}
+movePosition([10, 20, 30, 40, 50], 0, 2)
+
+//swapCase
+
+//The Quick Brown Fox
+//tHE qUICK bROWN fOX
+function swapCase(word){
+    var arrayMessage = []
+    for(var i = 0; i < word.length; i++){
+        arrayMessage.push(word[i])
+    }
+    console.log(arrayMessage)
+    for(var i = 0; i < arrayMessage.length; i++){
+        if (arrayMessage[i] == arrayMessage[i].toLowerCase())
+            {
+            // The character is lowercase
+            arrayMessage[i]=arrayMessage[i].toUpperCase();
+            }
+            else
+            {
+            arrayMessage[i]=arrayMessage[i].toLowerCase();
+        }
+    }
+    arrayMessage=arrayMessage.join("");
+    console.log(arrayMessage)
+}
+swapCase("The Quick Brown Fox")
