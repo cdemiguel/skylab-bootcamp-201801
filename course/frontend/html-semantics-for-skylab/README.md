@@ -12,6 +12,6 @@ The texts can be found at `material/texts`
 
 ![Blog](material/img/blog.png)
 
-## Contact
+## Contacts
 
 ![Contact](material/img/contact.png)
