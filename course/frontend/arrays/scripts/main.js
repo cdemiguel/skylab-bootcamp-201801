@@ -1,4 +1,4 @@
-//isArray
+//1isArray
 var arrayOrNot = [3,5]
 function isArray(){
     if(Array.isArray(arrayOrNot) == true){
@@ -10,7 +10,7 @@ function isArray(){
 }
 isArray()
 
-//joinElements
+//2joinElements
 beatles = ['John','George','Ringo','Paul'];
 function toString(a){
     a = a.toString();
@@ -18,7 +18,7 @@ function toString(a){
 }
 toString(beatles)
 
-//array_Clone
+//3array_Clone
 var arrayClone01 =  [1, 2, 4, 0] ;
 function arrayClone(a){
     var arrayClone02 = a.slice(0)
@@ -26,7 +26,7 @@ function arrayClone(a){
 }
 console.log("este es el array clonado=>", arrayClone(arrayClone01))
 
-//findDifferences
+//4findDifferences
 var arr1 = [1,2,3,4,5,6]
 var arr2 = [1,4,6]
 var arr3 = []
@@ -50,7 +50,7 @@ showDifferentNumbers()
 
 //TODO EJERCICIO ENCONTRAR LAS DIFERENCIAS
 
-//Sum and Product
+//5Sum and Product
 var arr = [1,2,3,4]
 function sumAndProduct(a){
     var initialNum = a[0]
@@ -66,15 +66,33 @@ function sumAndProduct(a){
 }
 sumAndProduct(arr)
 
-//Add items
+//6.Add items
 arrayPush=[]
 function addItemsIntoArray(){
-    arrayPush.push(arguments)
-    console.log(arrayPush)
+    for(elem of arguments){
+		arrayPush.push(elem)
+	}
+    return arrayPush
 }
-addItemsIntoArray(2,4,6)
+console.log(addItemsIntoArray(2,4,6))
 
-//generateArrayLength
+/*Forma Pro
+arrayPush=[]
+function addItemsIntoArray(){
+    for(elem of arguments){
+		//arrayPush.push(elem)
+		console.log(elem)
+	}
+
+	for(elem in arguments){
+		console.log(arguments[elem])
+	}
+    return arrayPush
+}
+console.log(addItemsIntoArray(2,4,6))
+*/
+
+//7generateArrayLength
 arrayGen = []
 function generateArrayLength(a,b){
     arrayGen.push(a)
@@ -86,7 +104,7 @@ function generateArrayLength(a,b){
 }
 generateArrayLength(1,4)
 
-//last
+//8last
 function last(a,b){
     if(b){
 	for(var i = b; i > 0; i--){
