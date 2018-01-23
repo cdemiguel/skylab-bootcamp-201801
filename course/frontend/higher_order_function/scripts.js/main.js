@@ -24,6 +24,11 @@ function filterItems(query) {
 console.log(filterItems('j'));
 
 //Reduce 
+//Hacer un ejercicio 
+//Escribir una funcion que cuente todas las vocales del texto
+//reduce crea un contador
+
+
 
 //Hacer el ejercicio de reduce con regular expresion
 
