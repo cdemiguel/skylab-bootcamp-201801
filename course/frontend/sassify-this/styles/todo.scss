@@ -1,0 +1,43 @@
+
+@mixin padding-styles($size1,$size2, $size3, $size4) {
+    padding: $size1,$size2, $size3, $size4;
+}
+@mixin borders($radius, $color) {
+    border-radius: $radius;
+    border-color:$color;
+}
+%equal-heights {
+    border-width: 1px;
+}
+%equal-h4 {
+    border-bottom-width: 1px;
+    padding-bottom: 10px;
+    text-align: center; 
+}
+%equal-containers {
+    padding: 25px;
+    position: fixed; 
+}
+
+body {
+    background-color: white;
+    font-family: normal 14px courier,sans-serif; 
+}
+.container {
+    @extend %equal-containers;
+}
+.form-login {
+    background-color: aquamarine;
+    @include padding-styles(10px,20px,20px,20px);
+    @include borders(10px, black);
+}
+h4 {
+    @extend %equal-h4;
+}
+.form-control {
+    @include borders(10px, gray);
+    @extend %equal-heights; 
+}
+.wrapper {
+    text-align: center; 
+}

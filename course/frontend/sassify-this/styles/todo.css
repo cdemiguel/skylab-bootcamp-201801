@@ -1,0 +1,30 @@
+.form-control {
+  border-width: 1px; }
+
+h4 {
+  border-bottom-width: 1px;
+  padding-bottom: 10px;
+  text-align: center; }
+
+.container {
+  padding: 25px;
+  position: fixed; }
+
+body {
+  background-color: white;
+  font-family: normal 14px courier,sans-serif; }
+
+.form-login {
+  background-color: aquamarine;
+  padding: 10px, 20px, 20px, 20px;
+  border-radius: 10px;
+  border-color: black; }
+
+.form-control {
+  border-radius: 10px;
+  border-color: gray; }
+
+.wrapper {
+  text-align: center; }
+
+/*# sourceMappingURL=todo.css.map */
