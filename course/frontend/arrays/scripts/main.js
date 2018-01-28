@@ -134,9 +134,7 @@ function getRandom(){
 getRandom()
 
 //findDuplicates
-
-
-// TODO:
+////////////TODO///////////
 
 //Merge arrays
 var array1 = [1, 2, 3]; 
@@ -201,3 +199,63 @@ function swapCase(word){
     console.log(arrayMessage)
 }
 swapCase("The Quick Brown Fox")
+
+//array_filled(string)
+function array_filled (a, b){
+    var arrayElements =[];
+    for(var i=0; i<a; i++){
+        arrayElements.push(b)
+    }
+    return arrayElements;
+}
+console.log(array_filled(4, 'password'));
+
+//Sum squares
+function sumSquares(a,b) {
+    var c = Math.pow(a,2) + Math.pow(b,2)
+    return c;
+}
+console.log(sumSquares(2,4))
+
+//removeDuplicate
+////////////TODO///////////
+
+//showChoices
+color = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow "]; 
+o = ["th","st","nd","rd"] 
+function showChoices(){
+    var arrayCombination=[]
+    for(var i=0; i<color.length; i++){
+        switch (i) {
+            case 0:
+                first = i+1+o[i]+color[i];
+                arrayCombination.push(first)
+                break;
+            case 1:
+                second = i+1+o[i]+color[i];
+                arrayCombination.push(second)
+                break;
+            case 2:
+                third = i+1+o[i]+color[i];
+                arrayCombination.push(third)
+                break;
+            default: 
+                infinite = i+1+o[0]+color[i];
+                arrayCombination.push(infinite)
+                break;
+        }
+    }
+    return arrayCombination
+}
+console.log(showChoices())
+
+//showLeapYears
+var years =[1992,1993,1994,1995,1996,1997,1998,1999,2000]
+function showLeapYears(){
+    var arrayYearsLeap=[]
+    for(var i=0;i<years.length;i=i+4){
+        arrayYearsLeap.push(years[i])
+    }
+    return arrayYearsLeap
+}
+showLeapYears()

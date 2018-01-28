@@ -1,6 +1,6 @@
 
 @mixin padding-styles($size1,$size2, $size3, $size4) {
-    padding: $size1,$size2, $size3, $size4;
+    padding: $size1  $size2  $size3  $size4;
 }
 @mixin borders($radius, $color) {
     border-radius: $radius;
@@ -33,6 +33,7 @@ body {
 }
 h4 {
     @extend %equal-h4;
+    color:red !important;
 }
 .form-control {
     @include borders(10px, gray);
