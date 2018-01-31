@@ -222,22 +222,53 @@ Write a recursive function that reverse a string.
 input -> reverseString('hello') output-> olleh
 
 ```
+condición ? expr1
 */
 
 //V2
 function reverseString(word) {
-    counter = 0;
-    wordreverse = []
-    var i = word.length
+    var counter = 0;
+    var wordreverse = [];
+    var i = word.length;
     function recursiveFunction(word){
-        counter++
+        counter++;
         wordreverse.push(word.charAt(i-1));
-        i--
-        if (counter < word.length){
-            recursiveFunction(word)
-        }
+        i--;
+        if (counter < word.length) return recursiveFunction(word);
     }
-    recursiveFunction(word)
-    return wordreverse;
+    recursiveFunction(word);
+    return wordreverse.join("");
 }
 console.log(reverseString("hello"));
+
+/*
+# Practice Recursion
+## Goal
+- Understand recursion
+## Task
+### remove-repeat-chars
+- Write a recursive function that remove the repeat characters.
+```
+input -> removeRepeatChars('aabcbcb') output -> abc
+```
+*/
+
+function removeRepeatChars(word){
+    var counter = 0;
+    var newWord = [];
+	word = word.split('').sort();
+    var i = 0;
+    function deleteRepeatChars(word){
+        counter++
+        i++
+        if (word[i]!==word[i+1]){
+            newWord.push(word[i])
+        }
+        if (counter < word.length){
+            deleteRepeatChars(word)
+        }
+    }
+    deleteRepeatChars(word)
+    return newWord.join("");
+}
+console.log(removeRepeatChars('aabcbcb'))

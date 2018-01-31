@@ -1,0 +1,21 @@
+body{
+    padding: 20px;
+}
+.container{
+    width: 70% !important;
+    padding: 0 10% 1% 10%;
+    border: 2px solid #cacaca;
+    background-color: #f7f7f7;
+}
+.row{
+    margin-left: 30% !important;
+}
+input{
+    background: #fff;
+    padding-left: 10px !important;
+    margin: 20px 0 !important;
+    border-bottom: 1px solid #d4d2d2 !important;
+}
+h3{
+    text-align: center;
+}

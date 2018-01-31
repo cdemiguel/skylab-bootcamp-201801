@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+html,
+body {
+    height: 100%;
+    background: #fcf8d6;
+    /*background: linear-gradient(270deg, #fcf8d6, #ede6ab, #fcf8d6, #dcd6a9);*/
+    background: linear-gradient(270deg, #fcf8d6, #f8c8b4, #fcf8d6, #f4a238);
+    background-size: 800% 800%;
+
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #ffccd0 !important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #ffccd0 !important;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #ffccd0 !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #ffccd0 !important;
+}
+.main-text-color{
+    color: #f2828a;
+}
+p{
+    color: #1e1c29;
+}
+.form-control{
+    color: #1e1c29;
+    border: 1px solid rgb(243, 238, 197);
+}
+input.form-control:focus {
+    outline: none !important;
+    border:1px solid #f2828a;
+    box-shadow: 0 0 10px #f2828a;
+}
+h1{
+    font-family: 'Pacifico', cursive;
+}
+input{
+    text-align: center;
+}
+.container{
+    margin-top: 30px;
+}
+.container-fluid{
+    margin-top: 30px;
+    padding: 30px 20px 20px 20px;
+    background: #fcf8d6;
+}
+li.list-group-item{
+    list-style: none;
+    border: 1px solid rgb(243, 238, 197);
+    cursor:pointer;
+}
+li.list-group-item:hover{
+    background: #f2828a;
+    color:#fff;
+}
+h3 p{
+    padding-bottom: 10px;
+    border-bottom:1px dashed #f2828a;
+}
+.beer-title p{
+    color: #f2828a;
+}
+.section-content-beer{
+    background: #fcf8d6;
+}
+.bg-warning {
+    background-color: #f2828a!important;
+}
