@@ -9,8 +9,8 @@
   $('form').submit(function (e) {
     e.preventDefault();
     const query = $('input').val();
-
-    spotifyApi.searchArtists(query, showResults, showError)
+    const baseUrl= "https://api.spotify.com/v1/"
+    spotifyApi.searchArtists(query, baseUrl).then(artists=>showResults(artists))
   })
 
   // definimos la funcion showResults
@@ -20,7 +20,7 @@
     $(".section-track").hide()
     $(".section-tracks").hide()
     
-      artists.artists.items.forEach(function(item) {
+      artists.forEach(function(item) {
         
         const imagesUrl = item.images.length !=0 ? item.images[0].url : '';
 
@@ -49,8 +49,9 @@
    *  Enviamos datos a la api de sporify
    */
   $("body").on("click", ".photobox-artists", (function(e) { 
-    const query =  $(this).attr("data-url")
-    spotifyApi.retrieveAlbums(query, showAlbums, showError)
+    const query = $(this).attr("data-url")
+    const baseUrl= "https://api.spotify.com/v1/"
+    spotifyApi.retrieveAlbums(query,baseUrl).then(albums=>showAlbums(albums))
   }))
   
   //definimos la funcion showAlbums que nos servira para enseñar los albums
@@ -61,7 +62,7 @@
 
     let boxAlbums = "";
 
-    albums.items.forEach(function(item) {
+    albums.forEach(function(item) {
 
         boxAlbums+="<div class='col p-2 card'>";
         boxAlbums+="<div data-url='https://api.spotify.com/v1/albums/"+item.id+"/tracks' class='photobox photobox-album photobox_type16'>";
@@ -77,7 +78,7 @@
     });
 
     let boxtitles = ""
-    albums.items.forEach(function(item) {
+    albums.forEach(function(item) {
       boxtitles+="<span class='subsection-titles'>"+item.name+" / "+"</span>";
     });
     
@@ -91,7 +92,8 @@
    */
   $("body").on("click", ".photobox-album", (function(e) { 
     const query =  $(this).attr("data-url")
-    spotifyApi.retrieveTracks(query, showTracks, showError)
+    const baseUrl= "https://api.spotify.com/v1/"
+    spotifyApi.retrieveTracks(query,baseUrl).then(tracks=>showTracks(tracks))
   }))
 
   //definimos la funcion showTracks que nos servira para enseñar las canciones
@@ -102,7 +104,7 @@
   
     let tracktitles = ""
   
-    tracks.items.forEach(function(item) {
+    tracks.forEach(function(item) {
       tracktitles+="<span class='subsection-tracks' data-url='"+item.id+"'>"+item.name+" "+"</span>";
     });
   
@@ -110,12 +112,19 @@
   
   }
 
+
+
+
+
+
+
   /**
    *  Enviamos datos a la api de sporify
    */
   $("body").on("click", ".subsection-tracks", (function(e) { 
-    const query = $(this).attr("data-url")
-    spotifyApi.retrieveTrack(query, playMusic ,showError)
+    const query = $(this).attr("data-url")  
+    const baseUrl= "https://api.spotify.com/v1/albums/"
+    spotifyApi.retrieveTrack(query, baseUrl).then(track=>playMusic(track))
   }))
 
   //definimos la funcion playMusic que mostrara un reproductor de musica
@@ -124,7 +133,6 @@
     $(".section-track").show()
 
     let trackpreview = ""
-
       if(track.preview_url.length!=null){
         trackpreview+="<source src='"+track.preview_url+"' type='audio/mpeg'>"
       }
@@ -154,6 +162,3 @@
 
 })();
 
-
-
-//https://api.spotify.com/v1/albums/58d5NLRexNqZbtAtd1r0Jn
