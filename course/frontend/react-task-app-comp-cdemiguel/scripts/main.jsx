@@ -63,6 +63,7 @@ class TaskApp extends React.Component{
 class TaskInput extends React.Component{
     constructor() {
         super()
+        
         this.state = {
             input: ''
         }
@@ -96,15 +97,7 @@ class TaskInput extends React.Component{
 /*Hijo dumb TaskInput*/
 function TaskList(props) {
     return <ul>
-        {props.tasks.map((task, index) => <li>{task} &nbsp; <a onClick={(e) => {
-            e.preventDefault()
-
-            props.onRemoveTask(index)
-        }}>🗑</a>&nbsp;<a onClick={(e) => {
-            e.preventDefault()
-
-            props.onMarkDone(task, index)
-        }}>👾</a> </li>)}
+        {props.tasks.map((task, index) => <li>{task}</li>)}
     </ul>
 }
 

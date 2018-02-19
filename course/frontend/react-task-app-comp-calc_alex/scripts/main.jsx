@@ -33,5 +33,6 @@ class CountVisits extends React.Component{
     }   
 }
 
+
 ReactDOM.render(<CountVisits />,
     document.getElementById('root'))

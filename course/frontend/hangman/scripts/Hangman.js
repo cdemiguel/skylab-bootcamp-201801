@@ -71,8 +71,8 @@ class Hangman {
             // message:mesage
         };
     };
-    } 
-}
+} 
+
 
 game = new Hangman('hello', 10);
 
