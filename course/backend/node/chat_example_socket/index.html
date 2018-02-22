@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form_envio">
+        <input id="datos" name="" placeholder="Chat Chat Chat..." required/>
+        <input type="submit" value="send"/>
+    </form>
+    <div id="recibir"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script>
+        var webSocket = io.connect('http://localhost:8000');
+
+        $(document).on("ready", inicio);
+
+        function inicio(){
+            $("#form_envio").on("submit", enviar_datos);
+            websocket.on("datos_servidor", recibir_datos)
+        }
+
+        function enviar_datos(e){
+            e.preventDefault();
+            var dato = $("#form_envio").find("#datos").val();
+            webSocket.emit("datos_cliente", dato)
+        }
+
+        function recibir_datos(data){
+            $("#recibir").append(data)
+        }
+
+    </script>
+</body>
+</html>
