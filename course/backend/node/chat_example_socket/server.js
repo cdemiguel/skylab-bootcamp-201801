@@ -1,10 +1,17 @@
 var io = require('socket.io').listen(8000)
+// var http = require('http').createServer(8000)
+// var io = require('socket.io')(http)
+
+
 // metodo que nos ayuda a recibir las conexiones desde el cliente
 // este método disparara la funcion everyStart cada vez que un usuario se conecte a nuestra web
 io.sockets.on("connection", arranque)
 
 // dicha funcion tendra por parametro un socket es decir una conexion en tiempo real entre cliente y servidor
 function arranque(socket){
+
+    console.log("hola", socket.id)
+    
     // por medio de socket que es un objeto pasado por parametro
     // en el momento de cliente le pusimos el parametro data-cliente al enviar datos
     // que es el que utilizaremos para identificar
@@ -18,3 +25,7 @@ function arranque(socket){
 function regresar_datos(data){
     io.sockets.emit("datos_servidor", data)
 }
+
+// http.listen(3000, function(){
+//     console.log('listening on *:3000');
+//   });
