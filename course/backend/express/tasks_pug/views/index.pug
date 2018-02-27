@@ -1,0 +1,18 @@
+html
+ head
+ body
+  form(action="/createtask", method="post")
+   input(type="text", name="tasks")
+   input(type="submit", value="Add Task")
+   if(tasksToDo.length>0)
+    h2 TO DO
+    ul(class="todolist")
+     each task in tasksToDo
+      a(href=`/${task.id}` value= task.id) ✅ 
+      li= task.text
+   if(tasksDone.length>0)
+    h2 DONE
+    ul(class="donelist")
+     each task in tasksDone
+      a(href=`/${task.id}/delete`) ❌
+      li= task.text
