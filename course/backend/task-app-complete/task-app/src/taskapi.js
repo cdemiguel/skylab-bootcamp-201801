@@ -5,7 +5,7 @@ let taskApi;
 taskApi = {
 
     createTask: (task) => {
-        axios.post('http://localhost:5000/api/tasks', { task, status:false})
+      return  axios.post('http://localhost:5000/api/tasks', { task, status:false})
     },
 
     getTasks: () => {

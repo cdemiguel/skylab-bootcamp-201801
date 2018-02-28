@@ -33,9 +33,9 @@ const formBodyParser = bodyParser.urlencoded({ extended: false })
 app.post('/tasks', formBodyParser, (req, res) => {
     const { body: { text } } = req
 
-    taskApi.createTask(text); 
-
-    res.redirect('/')
+    taskApi.createTask(text)
+    .then(()=>res.redirect('/'))
+    
 })
 
 
@@ -45,8 +45,9 @@ app.get('/tasks/:id/done', (req, res) => {
 
     // taskLogic.markDone(id)
     taskApi.modifyTask(id)
+    .then(()=>{res.redirect('/')})
 
-    res.redirect('/')
+    
 })
 
 
@@ -54,8 +55,8 @@ app.get('/tasks/:id/remove', (req, res) => {
     const {  params: { id } } = req
 
     taskApi.removeTask(id)
+    .then(()=>res.redirect('/'))
 
-    res.redirect('/')
 })
 
 
