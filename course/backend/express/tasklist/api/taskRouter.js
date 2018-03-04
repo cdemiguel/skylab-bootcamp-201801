@@ -1,6 +1,6 @@
 const bodyParser = require('body-parser')
 
-const xtasksLogic = require('../logic/taskLogic')
+const tasksLogic = require('../logic/taskLogic')
 
 const { Router } = require('express')
 
@@ -42,7 +42,6 @@ router.delete('/tasks', jsonBodyParser, (req, res) => {
 router.delete('/tasks/:id', jsonBodyParser, (req, res) => {
     const { params: { id } } = req
 
-
     try {
         tasksLogic.deleteSelected(id)
 
@@ -54,11 +53,13 @@ router.delete('/tasks/:id', jsonBodyParser, (req, res) => {
 })
 
 // update a task
-router.put('/tasks/:id', jsonBodyParser,  (req, res) => {
+router.patch('/tasks/:id', jsonBodyParser,  (req, res) => {
     const { params: { id } } = req
 
+    const { task, newTask, status, newStatus } = req.body
+
     try {
-        tasksLogic.update(id)
+        tasksLogic.update(id, task, newTask, status, newStatus)
 
         res.json(success('Task update succeeded'))
     } catch(err) {
@@ -81,5 +82,6 @@ router.get('/tasks/done', (req, res) =>{
     res.json(success('Tasks listing succeeded.', tasksLogic.listDone()))
 
 })
+
 
 module.exports = router

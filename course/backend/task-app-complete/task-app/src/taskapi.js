@@ -16,7 +16,8 @@ taskApi = {
     },
 
     modifyTask: (id) =>{
-
+        
+        // primero hace la llamada axios.put y cuando vuelve hace el then
         return axios.put(`http://localhost:5000/api/tasks/${id}`)
             .then(function (response) {
                 return response.data

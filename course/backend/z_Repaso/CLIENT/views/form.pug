@@ -1,0 +1,24 @@
+html
+ body
+  h1 FORMULARIO
+  form(action="/api/create" method="post")
+   input(type="text" name="name" placeholder="yo")
+   input(type="text" name="password" placeholder='la contraseña no de mira')
+   input(type="submit" value="clika aqui")
+
+  if(users.length)
+   h1 USUARIOS
+   ul
+    each user in users
+     li #{user.name}
+      a(href=`/api/show/${user.id}`) Show
+      if(user.id === _id)
+       form(action=`/api/update/${user.id}` method="post")
+        input(type="text" name="name" placeholder="yo")
+        input(type="text" name="password" placeholder="la constraseña")
+        input(type="text" name="newPassword", placeholder="la nueva contraseña")
+        input(type="submit" value="Update")
+       form(action=`/api/delete/${user.id}` method="post")
+        input(type="text" name="name" placeholder="yo")
+        input(type="text" name="password" placeholder="la constraseña")
+        input(type="submit" value="Delete")

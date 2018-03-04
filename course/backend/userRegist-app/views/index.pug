@@ -1,0 +1,50 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        style
+            include ../styles/style.css
+        title Document
+    body
+        h1 User App
+        form(action="/register", method="post")
+            input(type="text", name="name", placeholder='name')
+            input(type="text", name="surname", placeholder='surname')
+            input(type="text", name="email", placeholder='email')
+            input(type="text", name="username",  placeholder='username')
+            input(type='password' name="password", placeholder='password')
+            input(type="submit", value="Add")
+
+
+        h2 USERS EMAIL
+            p(class='message') #{message}
+                ul
+                    each user in data
+                        li
+                            label #{user.email}
+                            a(href=`/${user._id}/update`) ✏️
+                        if(viewUpdateForm)
+                            each item in userToUpdate
+                                if(`${user._id}`==`${item[0]._id}`)
+                                    form(action=`/updateselected/${item[0]._id}`, method="post")
+                                        label firstname
+                                        input(type="text", name="name", placeholder='name', value=`${item[0].firstname}` )
+                                        label surname
+                                        input(type="text", name="surname", placeholder='surname' value=`${item[0].surname}`)
+                                        label password
+                                        input(type='password' name="password", placeholder='password' value=`${item[0].password}`)
+                                        input(type="submit", value="EDIT!!!!") 
+                                        a(href=`/${user._id}/delete`) 🗑
+        form(action="/delete", method="get")
+            input(type="submit", value="Delete ALL!")
+        form(action="/search/", method="get")
+            input(type="text", name="search", placeholder='filtra aqui')
+            input(type="submit", value="FILTRAAAAAAA!")
+        if(results.length)
+            each item, index in results
+                ul
+                    li name: #{item.firstname}
+                    li surname: #{item.surname}
+                    li email: #{item.email}
+                    li username: #{item.username}
