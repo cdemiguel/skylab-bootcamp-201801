@@ -1,0 +1,232 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Karla);
+body {
+  background: #f2f2f2;
+  height: 100vh;
+  position: relative;
+  font-family: "Karla", sans-serif;
+  cursor: default;
+}
+p {
+  margin-bottom: 0;
+}
+/* Gen Styles */
+.no-gutter {
+  padding-left: 0;
+  padding-right: 0;
+}
+::-moz-selection {
+  background: transparent;
+}
+::selection {
+  background: transparent;
+}
+input::-moz-selection {
+  color: #2d2d2d;
+  background: rgba(94, 223, 158, 0.5);
+}
+input::selection {
+  color: #2d2d2d;
+  background: rgba(94, 223, 158, 0.5);
+}
+a {
+  text-decoration: none;
+  color: #009dff;
+}
+#wrap {
+  width: 100%;
+}
+#search {
+  position: relative;
+}
+#search input, #search .ac {
+  line-height: 20px;
+  font-size: 20px;
+  font-family: "Karla", sans-serif;
+  font-weight: normal;
+  letter-spacing: 0em;
+}
+#search input {
+  border: 0px;
+  padding: 25px;
+  padding-right: 100px;
+  display: block;
+  position: relative;
+  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+#search input.search-bar {
+  width: 100%;
+  color: #6d6d6d;
+}
+#search input:focus {
+  outline: none;
+}
+#search input:focus + button {
+  right: -20px;
+}
+#search .ac {
+  z-index: 1;
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  /* margin-top: 1px; */
+  opacity: 0.3;
+  pointer-events: none;
+  -webkit-transition: 0.3s cubic-bezier(0.55, 0, 0.1, 1) all;
+  transition: 0.3s cubic-bezier(0.55, 0, 0.1, 1) all;
+}
+#search .ac.ac-hidden {
+  opacity: 0;
+}
+#search .button {
+  cursor: pointer;
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  color: white;
+  background: #5EDF9E;
+  border: 0px;
+  padding: 10px 30px;
+  line-height: 20px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(25%, -50%);
+          transform: translate(25%, -50%);
+  overflow: hidden;
+  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+#search .button.emoji-bank:after {
+  content: "💰";
+}
+#search .button.emoji-pizza:after {
+  content: "🍕";
+}
+#search .button.emoji:before {
+  left: -100%;
+}
+#search .button.emoji:after {
+  opacity: 1;
+  left: 0;
+}
+#search .button:after, #search button:before {
+  position: absolute;
+  background: #5EDF9E;
+  color: white;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  line-height: 40px;
+  -webkit-transition: 0.3s cubic-bezier(0.55, 0, 0.1, 1) all;
+  transition: 0.3s cubic-bezier(0.55, 0, 0.1, 1) all;
+  opacity: 0;
+}
+#search .button:before {
+  content: "Search";
+  opacity: 1;
+  left: 0;
+}
+#search .button:after {
+  content: "";
+  left: 100%;
+  font-size: 21px;
+  line-height: 40px;
+}
+#search .button:hover:after, #search button:hover:before {
+  background: #24b36b;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #64E9D3;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #64E9D3;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #64E9D3;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #64E9D3;
+}
+.aside {
+  margin-bottom: 30px;
+}
+.aside h3 {
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.5);
+}
+.aside p {
+  opacity: 0.3;
+}
+
+/* input container */
+.input-container {
+  margin-top: 30px;
+}
+
+/* section-list */
+.subsection-list {
+  background: #fff;
+  border:1px solid #3ED7BE;
+  margin-bottom: 1rem;
+  padding: 20px;
+  margin-top: 10px;
+}
+.subsection-list span{
+  color: #848484;
+  font-weight: bold;
+  margin-right: 5px;
+}
+.subsection-list p{
+  color: #3ED7BE;
+}
+hr{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgb(170, 236, 225);
+}
+.subsection-list-buttons:first-child {
+  margin-right: 10px;
+}
+.subsection-list-buttons a {
+  color:#fff;
+}
+.subsection-list-buttons span{
+  color: #fff;
+  font-weight: bold;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+/* modal */
+.modal-container {
+  position: relative;
+}
+.modal-container .modal, .modal-container .modal-backdrop {
+  position: absolute;
+}
+button {
+  float: left;
+  position: relative;
+}
+.modal-action {
+  float: left;
+  position: relative;
+  margin-right: 10px;
+}
+
+/* Header container */
+.header-container .button {
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+  padding: 15px 0px;
+  color: #3f796f;
+  background: #aaece1;
+  border:0;
+  float:left;
+  position: relative;
+}
