@@ -3,9 +3,6 @@ import React, { Component } from 'react';
 import { Route, HashRouter, NavLink } from 'react-router-dom'
 
 import './App.css';
-import api_client from './api-client'
-
-
 
 import CreateUser from './components/createuser';
 import ListUser from './components/listuser';
@@ -17,9 +14,7 @@ class App extends Component {
     }
   }
 
-
   render() {
-
 
     return (
       <div className="container input-container mt-5">
@@ -47,10 +42,8 @@ class App extends Component {
       </HashRouter>
       </div>
     );
+
   }
 }
-
-
-
 
 export default App;

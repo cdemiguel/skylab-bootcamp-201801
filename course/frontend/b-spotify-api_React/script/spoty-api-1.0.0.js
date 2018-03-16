@@ -8,7 +8,7 @@ var spotifyApi;
 
 spotifyApi = {
 
-    token: "BQBy_-FCSeOEoiBeBIIy9R0fQYEOD8NoWszRl1wgnKbaygkrt6uW2NO87A-7JAVWWmQigb_HhGcsw6fdPjTqwtPd0YUY8HdNTxLAdM9_TPaPUPLpqmrpUkr4I_SObD4w3Tu5bNKrjOAE2rU",
+    token: "BQCnswRBWYNi3XZl4BE9nd-R2mBNZyibgK8i9pn_007HEIJneAsVF0LRT39GBEfbs1cl5ak6OQ8vjEQGAIv_-DDnOOA8CPflZqQfSCDQdDs_8kjZ27SCjDKpQXUlWVrnlyt5gqteZEWCjhc",
 
     getHeaders: function () {
         return {

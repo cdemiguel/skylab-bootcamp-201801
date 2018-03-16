@@ -230,3 +230,19 @@ button {
   float:left;
   position: relative;
 }
+
+/* message pannels */
+.message-panel  {
+  padding: 10px 10px;
+  color: #fff;
+  margin-top: 10px;
+  float: left;
+  position: relative;
+  width: 100%;
+}
+.message-panel-ok {
+  background: #24b36b;
+}
+.message-panel-ko {
+  background: rgb(192, 61, 61);
+}

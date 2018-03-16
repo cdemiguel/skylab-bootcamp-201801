@@ -23,16 +23,8 @@ let api_client;
             return axios.post(`${baseUrl}/api/user`,  { name:queryname, surname:querysurname, email:queryemail, username: queryUsername, password: queryPassword})
         }
 
-
-
     }
 
 })()
-
-
-
-// if(typeof module !== "undefined"){
-//     module.exports = api_client
-// }
 
 export default api_client
